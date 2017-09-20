@@ -5,11 +5,11 @@
       <img src="./avatar.jpg">
     </div>
     <!--名字-->
-    <span class="name" :name="name">sampson</span>
+    <span class="name">sampson</span>
     <!--格言-->
-    <span class="aphorism" :aphorism="aphorism">lalalal</span>
+    <span class="aphorism">lalalal</span>
     <!--位置-->
-    <div class="location"><img src="./location.png"><span :loaction="loaction">广东,深圳</span></div>
+    <div class="location"><img src="./location.png"><span>广东,深圳</span></div>
     <!-- follow me -->
     <div class="follow">
       <span>FOLLOW</span>

@@ -15,9 +15,9 @@
           </router-link>
         </li>
         <li>
-          <!-- <router-link :to="/article"> -->
-            文章
-          <!-- </router-link> -->
+          <router-link class="title-item" to="/article">
+            <span>文章</span>
+          </router-link>
         </li>
         <li>
           <!-- <router-link :to="/category"> -->
