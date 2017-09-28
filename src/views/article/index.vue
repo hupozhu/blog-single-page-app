@@ -1,41 +1,50 @@
 <template>
-  <article-list :articleData="articleList"></article-list>
+  <div>
+    <article-list :articleData="articleList"></article-list>
+    <div class="loadmore" v-on:click="loadMore">加载更多</div>
+  </div>
 </template>
 
 <script>
 import ArticleList from '../../components/article/articleList.vue'
-import { fetchAllArticlesList } from '@/api/article'
+import articleApi from '@/api/article'
 
 export default{
   data () {
     return {
-      articleList: []
+      articleList: [],
+      page: 1
     }
   },
   created () {
-    alert('haha')
     this.getData()
   },
   methods: {
     getData () {
-      let context = this
-      fetchAllArticlesList({'page': 2, 'limit': 3}).then(function (res) {
-        console.log(res.data)
+      this.fetchAllArticlesList({ 'page': this.page, 'limit': 1 }).then(res => {
         if (res.status === 200) {
-          context.articleList = res.data.data
+          this.articleList = this.articleList.concat(res.data.data)
         }
       })
       .catch(function (err) {
         alert(err)
         console.log(err)
       })
+    },
+    loadMore () {
+      this.page++
+      this.getData()
     }
   },
   components: {
     ArticleList
-  }
+  },
+  mixins: [articleApi]
 }
 </script>
 
 <style>
+.loadmore{
+  margin-bottom: 20px;
+}
 </style>

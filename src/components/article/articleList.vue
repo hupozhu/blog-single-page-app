@@ -9,7 +9,7 @@
         <li style="font-size:30px"><img class="icon-calender" src="./calender.png"></li>
         <li class="riqi-num can-click">{{item.created_at}}</li>
         <li><img class="icon-tag" src="./tag.png"></li>
-        <li class="can-click">{{item.remark}}</li>
+        <li class="can-click">{{item.layered_name}}</li>
       </ul>
 
       <p class="article-content">{{item.brief}}</p>
